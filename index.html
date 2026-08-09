@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프로이트 꿈 일기 — 무의식을 기록하는 서재</title>
+<meta name="description" content="매일 밤의 꿈을 기록하고, 프로이트 정신분석의 질문틀(압축·전치·소원성취·낮의 잔재)로 스스로 해석해보는 꿈 일기 도구입니다.">
+<meta name="naver-site-verification" content="PLACEHOLDER_NAVER_VERIFICATION">
+<link rel="canonical" href="https://PLACEHOLDER-DOMAIN.vercel.app/">
+<link rel="stylesheet" href="assets/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2557338953436433" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap-wide">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 15 Q7 6 12 15 T21 12" stroke="#6e2a33" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      프로이트 꿈 일기
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">일기</a>
+      <a href="theory/index.html">이론 노트</a>
+      <a href="symbols.html">상징 사전</a>
+      <a href="about.html">소개</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">DREAM JOURNAL — 자유연상 기록</p>
+  <h1>어젯밤 꿈은, 낮의 잔재가<br>무의식의 검열을 통과한 흔적입니다.</h1>
+  <p class="lede">프로이트는 꿈을 "억압된 소원의 위장된 성취"라 보았습니다. 이 도구는 점괘를 주지 않습니다 — 대신 당신이 스스로의 꿈을 분석할 수 있도록, 정신분석의 질문틀을 빌려드립니다.</p>
+  <svg class="threshold" viewBox="0 0 700 64" preserveAspectRatio="none">
+    <path d="M0,32 L18,18 L36,46 L54,14 L72,42 L90,20 Q130,8 170,32 T250,32 Q310,54 370,30 T460,32 Q540,8 600,32 T700,32" />
+  </svg>
+</section>
+
+<section class="section wrap" id="write">
+  <div class="section-head">
+    <span class="tag">Step 1 — 기록</span>
+    <h2>오늘의 꿈을 적어보세요</h2>
+  </div>
+
+  <div id="storage-notice" class="notice-banner" style="display:none;">
+    <strong>안내.</strong> 현재 브라우저 저장소에 접근할 수 없어 기록이 <strong>이 화면을 벗어나면 사라지는 임시 메모리</strong>에만 저장됩니다. 실제 기기의 브라우저에서 열면 자동으로 로컬에 저장됩니다.
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label class="field-label">날짜</label>
+      <input type="date" id="f-date">
+    </div>
+    <div class="field">
+      <label class="field-label">꿈의 내용 (기억나는 대로, 순서 상관없이)</label>
+      <textarea id="f-text" placeholder="예: 낯선 집 계단을 올라가는데 계단이 계속 늘어났다. 어릴 적 살던 동네 냄새가 났다..."></textarea>
+    </div>
+    <div class="field">
+      <label class="field-label">등장 요소 (해당하는 것을 눌러 태그하세요)</label>
+      <div class="chip-row" id="tag-row">
+        <span class="chip" data-tag="아는 사람">아는 사람</span>
+        <span class="chip" data-tag="낯선 사람">낯선 사람</span>
+        <span class="chip" data-tag="가족">가족</span>
+        <span class="chip" data-tag="어린 시절 장소">어린 시절 장소</span>
+        <span class="chip" data-tag="추락/쫓김">추락 · 쫓김</span>
+        <span class="chip" data-tag="시험/과제">시험 · 과제</span>
+        <span class="chip" data-tag="반복되는 꿈">반복되는 꿈</span>
+        <span class="chip" data-tag="죽음/이별">죽음 · 이별</span>
+      </div>
+    </div>
+    <div class="field">
+      <label class="field-label">깨어났을 때 느낀 감정</label>
+      <select id="f-emotion">
+        <option value="">선택 안 함</option>
+        <option value="불안">불안</option>
+        <option value="평온">평온</option>
+        <option value="그리움">그리움</option>
+        <option value="수치심">수치심</option>
+        <option value="혼란">혼란</option>
+        <option value="해방감">해방감</option>
+      </select>
+    </div>
+    <button class="btn" id="btn-save">기록 저장하기</button>
+  </div>
+</section>
+
+<section class="section wrap" id="analyze">
+  <div class="section-head">
+    <span class="tag">Step 2 — 자기분석</span>
+    <h2>프로이트식 질문으로 들여다보기</h2>
+  </div>
+  <p class="small mt-0">아래 질문은 정답을 주지 않습니다. 채워나가는 과정 자체가 분석입니다. 답은 저장되지 않으며, 오늘의 기록에 이어 붙여 함께 저장할 수 있습니다.</p>
+
+  <ul class="prompt-list mt-16">
+    <li class="prompt-item">
+      <span class="concept">압축 (Condensation)</span>
+      <p class="question">꿈에서 여러 사람·장소·기억이 하나로 뒤섞인 장면이 있었나요? 무엇과 무엇이 겹쳐 보였나요?</p>
+      <textarea id="p-condensation" placeholder="예: 회사 상사의 얼굴인데 목소리는 아버지였다..."></textarea>
+    </li>
+    <li class="prompt-item">
+      <span class="concept">전치 (Displacement)</span>
+      <p class="question">꿈에서 유난히 사소해 보였지만 이상하게 강렬한 감정이 실렸던 대상이 있나요? 그 감정은 원래 어디를 향한 것이었을까요?</p>
+      <textarea id="p-displacement" placeholder="예: 별거 아닌 물건 하나에 왜 그렇게 화가 났을까..."></textarea>
+    </li>
+    <li class="prompt-item">
+      <span class="concept">낮의 잔재 (Day Residue)</span>
+      <p class="question">어제 실제로 겪은 일 중, 이 꿈의 재료가 되었을 법한 장면은 무엇인가요?</p>
+      <textarea id="p-residue" placeholder="예: 어제 낮에 옛 동료에게 연락이 왔었다..."></textarea>
+    </li>
+  </ul>
+
+  <button class="btn ghost mt-16" id="btn-append">위 답변을 오늘 기록에 이어 붙이기</button>
+</section>
+
+<section class="section wrap" id="stats">
+  <div class="section-head">
+    <span class="tag">패턴</span>
+    <h2>지금까지의 기록 요약</h2>
+  </div>
+  <div class="grid-4" id="stats-grid">
+    <div class="card stat-card"><span class="num" id="stat-total">0</span><span class="label">총 기록 수</span></div>
+    <div class="card stat-card"><span class="num" id="stat-tag">—</span><span class="label">가장 잦은 요소</span></div>
+    <div class="card stat-card"><span class="num" id="stat-emotion">—</span><span class="label">가장 잦은 감정</span></div>
+    <div class="card stat-card"><span class="num" id="stat-count">0</span><span class="label">해당 요소 등장 횟수</span></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ad-slot">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2557338953436433"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<section class="section wrap" id="entries">
+  <div class="section-head">
+    <span class="tag">기록 보관함</span>
+    <h2>지난 꿈들</h2>
+  </div>
+  <div id="entries-list"></div>
+</section>
+
+<footer class="site">
+  <div class="wrap-wide">
+    <span>© 2026 프로이트 꿈 일기. 이 사이트의 내용은 정신의학적 진단이 아닌 교육·자기성찰 목적의 정보입니다.</span>
+    <nav>
+      <a href="about.html">소개</a>
+      <a href="contact.html">문의</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="terms.html">이용약관</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  const dateInput = document.getElementById('f-date');
+  dateInput.value = new Date().toISOString().slice(0,10);
+
+  if(window.DreamJournal.isMemoryFallback()){
+    document.getElementById('storage-notice').style.display = 'block';
+  }
+
+  const tagRow = document.getElementById('tag-row');
+  tagRow.addEventListener('click', (e) => {
+    if(e.target.classList.contains('chip')) e.target.classList.toggle('active');
+  });
+
+  function selectedTags(){
+    return Array.from(tagRow.querySelectorAll('.chip.active')).map(c => c.dataset.tag);
+  }
+
+  function render(){
+    const entries = window.DreamJournal.all();
+    const list = document.getElementById('entries-list');
+    if(entries.length === 0){
+      list.innerHTML = '<div class="empty-state">아직 기록된 꿈이 없습니다. 위에서 첫 기록을 남겨보세요.</div>';
+    }else{
+      list.innerHTML = entries.map(e => `
+        <div class="entry" data-id="${e.id}">
+          <div class="entry-head">
+            <span class="entry-date">${e.date || ''}${e.emotion ? ' · ' + e.emotion : ''}</span>
+            <div class="entry-tags">${(e.tags||[]).map(t => `<span class="chip">${t}</span>`).join('')}</div>
+          </div>
+          <p class="entry-text">${(e.text||'').replace(/</g,'&lt;')}</p>
+          <div class="entry-actions">
+            <button data-action="delete">삭제</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const s = window.DreamJournal.stats();
+    document.getElementById('stat-total').textContent = s.total;
+    document.getElementById('stat-tag').textContent = s.topTag || '—';
+    document.getElementById('stat-emotion').textContent = s.topEmotion || '—';
+    document.getElementById('stat-count').textContent = Math.max(s.topTagCount, s.topEmotionCount);
+  }
+
+  document.getElementById('entries-list').addEventListener('click', (e) => {
+    if(e.target.dataset.action === 'delete'){
+      const id = e.target.closest('.entry').dataset.id;
+      window.DreamJournal.remove(id);
+      render();
+    }
+  });
+
+  document.getElementById('btn-save').addEventListener('click', () => {
+    const text = document.getElementById('f-text').value.trim();
+    if(!text){ alert('꿈 내용을 입력해주세요.'); return; }
+    window.DreamJournal.add({
+      date: dateInput.value,
+      text: text,
+      tags: selectedTags(),
+      emotion: document.getElementById('f-emotion').value
+    });
+    document.getElementById('f-text').value = '';
+    tagRow.querySelectorAll('.chip.active').forEach(c => c.classList.remove('active'));
+    document.getElementById('f-emotion').value = '';
+    render();
+  });
+
+  document.getElementById('btn-append').addEventListener('click', () => {
+    const c = document.getElementById('p-condensation').value.trim();
+    const d = document.getElementById('p-displacement').value.trim();
+    const r = document.getElementById('p-residue').value.trim();
+    let addition = '';
+    if(c) addition += `\n\n[압축] ${c}`;
+    if(d) addition += `\n\n[전치] ${d}`;
+    if(r) addition += `\n\n[낮의 잔재] ${r}`;
+    if(!addition){ alert('먼저 위의 질문에 답을 적어주세요.'); return; }
+    const ta = document.getElementById('f-text');
+    ta.value = (ta.value || '') + addition;
+    document.getElementById('write').scrollIntoView({behavior:'smooth'});
+  });
+
+  render();
+})();
+</script>
+<script src="assets/cookie-consent.js"></script>
+</body>
+</html>

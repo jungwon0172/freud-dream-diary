@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/index.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/condensation.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/displacement.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/wish-fulfillment.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/day-residue.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/symbols.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/contact.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
