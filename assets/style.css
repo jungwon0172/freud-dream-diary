@@ -300,6 +300,42 @@ input:focus, textarea:focus, select:focus{
 .article-list .card p{ margin:0 0 10px; color: var(--ink-soft); font-size:14.5px; }
 .article-list .card .concept-tag{ font-family: var(--font-mono); font-size:11px; color: var(--brass); text-transform:uppercase; letter-spacing:0.05em; }
 
+/* ---------- 달력 ---------- */
+.cal-head{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom: 14px;
+}
+.cal-grid{
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-cell{
+  aspect-ratio: 1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--ink-soft);
+  position: relative;
+  min-height: 34px;
+}
+.cal-cell.dow{ cursor:default; color: var(--brass); font-size:11px; }
+.cal-cell.empty{ cursor:default; }
+.cal-cell.has-entry{ color: var(--ink); font-weight:600; }
+.cal-cell.has-entry::after{
+  content:'';
+  width:5px; height:5px; border-radius:50%;
+  background: var(--wine);
+  position:absolute; bottom:4px;
+}
+.cal-cell.selected{ background: var(--wine); color: var(--paper) !important; }
+.cal-cell:not(.dow):not(.empty):hover{ background: var(--paper-deep); }
+@media (max-width: 480px){
+  .cal-cell{ font-size: 11px; min-height: 30px; }
+}
+
 /* ---------- 유틸 ---------- */
 .mt-0{margin-top:0} .mt-8{margin-top:8px} .mt-16{margin-top:16px} .mt-24{margin-top:24px} .mt-40{margin-top:40px}
 .small{ font-size: 13px; color: var(--ink-soft); }

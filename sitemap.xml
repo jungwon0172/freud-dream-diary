@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/index.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/symbols.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/diary.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/index.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/condensation.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/displacement.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/wish-fulfillment.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/theory/day-residue.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/symbols.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/contact.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/privacy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/terms.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/snake.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/money.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/teeth.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/water.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/fire.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/blood.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/death.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/baby.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/pig.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/dragon.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/flying.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/falling.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/chasing.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/exam.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/wedding.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/ex.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/hair.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/poop.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/fish.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/house.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/car_accident.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/ghost.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/school.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/flower.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/cry.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/lost.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/spider.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://PLACEHOLDER-DOMAIN.vercel.app/dream/shoes.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
