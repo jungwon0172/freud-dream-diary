@@ -9,23 +9,7 @@ from data import SYMBOLS, CATEGORIES
 ROOT = os.path.dirname(__file__)
 DOMAIN = "https://PLACEHOLDER-DOMAIN.vercel.app"
 
-HEADER = """<header class="site">
-  <div class="wrap-wide">
-    <a class="brand" href="{root}index.html">
-      <svg class="mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 15 Q7 6 12 15 T21 12" stroke="#6e2a33" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      프로이트 꿈해몽
-    </a>
-    <nav class="site-nav">
-      <a href="{root}index.html"{active_home}>해몽 검색</a>
-      <a href="{root}symbols.html"{active_symbols}>전체 목록</a>
-      <a href="{root}diary.html"{active_diary}>꿈 일기</a>
-      <a href="{root}theory/index.html"{active_theory}>이론 노트</a>
-    </nav>
-  </div>
-</header>
-"""
+from header_tpl import render_header as _rh, CAT_IDS
 
 AD_SLOT = """<div class="wrap">
   <div class="ad-slot">
@@ -66,20 +50,8 @@ HEAD_COMMON = """<meta charset="UTF-8">
 """
 
 
-def nav_active(current):
-    keys = ["home", "symbols", "diary", "theory"]
-    return {k: (' class="active"' if k == current else "") for k in keys}
-
-
 def render_header(root, current):
-    a = nav_active(current)
-    return HEADER.format(
-        root=root,
-        active_home=a["home"],
-        active_symbols=a["symbols"],
-        active_diary=a["diary"],
-        active_theory=a["theory"],
-    )
+    return _rh(root, current)
 
 
 def page_shell(root, current, title, description, canonical, body_html, extra_head=""):
@@ -262,7 +234,7 @@ def build_symbols_listing():
 """
             for s in items
         )
-        cat_html += f"""  <div class="section-head mt-40">
+        cat_html += f"""  <div class="section-head mt-40" id="cat-{dict(CAT_IDS)[cat]}">
     <span class="tag">{cat}</span>
   </div>
   <div class="grid-2">

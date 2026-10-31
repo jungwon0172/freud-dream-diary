@@ -54,13 +54,30 @@ a:hover{ border-color: var(--wine); }
 
 header.site{
   border-bottom: 1px solid var(--line-strong);
-  padding: 22px 0;
+  padding: 14px 0 0;
   position: sticky; top:0; z-index: 40;
   background: var(--paper);
   background: color-mix(in srgb, var(--paper) 92%, transparent);
   backdrop-filter: blur(6px);
 }
-header.site .wrap-wide{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+header.site .top-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding-bottom:12px; }
+nav.util-nav{ display:flex; gap:18px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.03em; flex-shrink:0; }
+nav.util-nav a{ color: var(--ink-soft); border-bottom: 1px solid transparent; }
+nav.util-nav a:hover, nav.util-nav a.active{ color: var(--wine); border-color: var(--wine); }
+
+/* 꿈 메뉴칸 (2행) */
+nav.dream-menu{ border-top: 1px solid var(--line); background: var(--paper-deep); }
+.dream-menu-scroll{
+  display:flex; gap:6px; overflow-x:auto; white-space:nowrap;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.03em;
+}
+.dream-menu-scroll::-webkit-scrollbar{ display:none; }
+.dream-menu-scroll a{
+  color: var(--ink-soft); padding: 11px 12px; border-bottom: 2px solid transparent; flex-shrink:0;
+}
+.dream-menu-scroll a:hover, .dream-menu-scroll a.active{ color: var(--wine); border-bottom-color: var(--wine); }
+[id^="cat-"]{ scroll-margin-top: 110px; }
 
 .brand{
   font-family: var(--font-display);
@@ -398,4 +415,15 @@ input:focus, textarea:focus, select:focus{
   text-transform: uppercase;
   color: var(--ink-soft);
   margin-bottom: 6px;
+}
+
+@media (max-width: 480px){
+  .brand{ font-size:17px; }
+  nav.util-nav{ gap:12px; font-size:12px; }
+}
+
+/* 꿈 메뉴칸: 데스크톱에서는 한 줄에 모두 보이도록 간격 축소, 모바일은 가로 스크롤 */
+@media (min-width: 761px){
+  .dream-menu-scroll{ gap:0; justify-content:space-between; font-size:12px; letter-spacing:0.01em; }
+  .dream-menu-scroll a{ padding: 11px 6px; }
 }
