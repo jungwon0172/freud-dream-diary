@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from data import SYMBOLS, CATEGORIES
 
 ROOT = os.path.dirname(__file__)
-DOMAIN = "https://PLACEHOLDER-DOMAIN.vercel.app"
+from geo import DOMAIN, SITE, MODIFIED, ORG, ld, og, breadcrumb, article, faq, josa
 
 from header_tpl import render_header as _rh, CAT_IDS
 
@@ -55,7 +55,7 @@ def render_header(root, current):
 
 
 def page_shell(root, current, title, description, canonical, body_html, extra_head=""):
-    head = HEAD_COMMON.format(title=title, description=description, canonical=canonical, root=root) + extra_head
+    head = HEAD_COMMON.format(title=title, description=description, canonical=canonical, root=root) + og(title, description, canonical) + extra_head
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -80,12 +80,20 @@ def render_symbol_page(sym):
     aliases_html = " · ".join(sym["aliases"])
     context_html = "".join(
         f"""    <div class="entry">
-      <div class="entry-head"><span class="entry-date">{situation}</span></div>
+      <h3 class="qa-q">{situation}{josa(situation, '은', '는')} 어떤 의미인가요?</h3>
       <p class="entry-text">{meaning}</p>
     </div>
 """
         for situation, meaning in sym["context"].items()
     )
+    situations = ", ".join(sym["context"].keys())
+    t = sym["title"]
+    faq_pairs = [(f"{t}{josa(t, '은', '는')} 무슨 뜻인가요?", sym["traditional"])]
+    faq_pairs += [(f"{k}{josa(k, '은', '는')} 어떤 의미인가요?", v) for k, v in sym["context"].items()]
+    faq_pairs.append((f"{t}{josa(t, '을', '를')} 심리학적으로 해석하면 어떤 의미인가요?", sym["psychological"]))
+    jsonld = (ld(article(f"{t} 해몽", sym["summary"], canonical, sym["aliases"]))
+              + ld(faq(faq_pairs))
+              + ld(breadcrumb([("홈", DOMAIN + "/"), ("꿈해몽 전체 목록", DOMAIN + "/symbols.html"), (f"{t} 해몽", canonical)])))
 
     related = sym.get("related", [])
     related_map = {s["slug"]: s for s in SYMBOLS}
@@ -99,9 +107,15 @@ def render_symbol_page(sym):
   <h1>{sym['title']} 해몽</h1>
   <p class="lede">{sym['summary']}</p>
   <p class="small mt-16">관련 검색어: {aliases_html}</p>
+  <p class="small">최종 업데이트 {MODIFIED}</p>
 </section>
 
 <section class="section wrap article-body" style="padding-top:0;">
+  <div class="answer-box">
+    <span class="answer-label">핵심 답변</span>
+    <p>{sym['summary']} 상황에 따라 해석이 달라지며, 대표적으로 {situations} 등으로 나뉩니다.</p>
+  </div>
+
   <h2>전통 해몽 풀이</h2>
   <p>{sym['traditional']}</p>
 
@@ -123,7 +137,7 @@ def render_symbol_page(sym):
   <p class="mt-40"><a href="../symbols.html">← 전체 꿈해몽 목록으로</a></p>
 </section>
 """
-    return page_shell(root, "symbols", title, description, canonical, body)
+    return page_shell(root, "symbols", title, description, canonical, body, extra_head=jsonld)
 
 
 def build_symbol_pages():
@@ -205,7 +219,10 @@ def build_index():
   <a class="btn mt-8" href="diary.html">꿈 일기 쓰러 가기</a>
 </section>
 """
-    extra_head = f'<script defer src="{root}assets/dream-data.js"></script>\n<script defer src="{root}assets/dream-search.js"></script>\n'
+    extra_head = f'<meta name="naver-site-verification" content="d3627b8ed52b0d92def5e199084707c7e6b07005">\n<script defer src="{root}assets/dream-data.js"></script>\n<script defer src="{root}assets/dream-search.js"></script>\n'
+    extra_head += ld({"@type": "WebSite", "@id": DOMAIN + "/#website", "name": SITE, "url": DOMAIN + "/",
+                      "inLanguage": "ko-KR", "description": description, "publisher": ORG})
+    extra_head += ld({"@context": "https://schema.org", **ORG})
     html = page_shell(root, "home", title, description, canonical, body, extra_head=extra_head)
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
@@ -259,6 +276,11 @@ def build_symbols_listing():
 {cat_html}</section>
 """
     extra_head = f'<script defer src="{root}assets/dream-data.js"></script>\n<script defer src="{root}assets/dream-search.js"></script>\n'
+    extra_head += ld({"@type": "CollectionPage", "name": title, "url": canonical, "inLanguage": "ko-KR",
+                      "mainEntity": {"@type": "ItemList", "itemListElement": [
+                          {"@type": "ListItem", "position": i + 1, "name": f"{s['title']} 해몽",
+                           "url": f"{DOMAIN}/dream/{s['slug']}.html"} for i, s in enumerate(SYMBOLS)]}})
+    extra_head += ld(breadcrumb([("홈", DOMAIN + "/"), ("꿈해몽 전체 목록", canonical)]))
     html = page_shell(root, "symbols", title, description, canonical, body, extra_head=extra_head)
     with open(os.path.join(ROOT, "symbols.html"), "w", encoding="utf-8") as f:
         f.write(html)
@@ -271,7 +293,7 @@ def build_sitemap():
             "/about.html", "/contact.html", "/privacy.html", "/terms.html"]
     urls += [f"/dream/{s['slug']}.html" for s in SYMBOLS]
     items = "\n".join(
-        f'  <url><loc>{DOMAIN}{u}</loc><changefreq>{"weekly" if u == "/" else "monthly"}</changefreq><priority>{"1.0" if u=="/" else "0.7"}</priority></url>'
+        f'  <url><loc>{DOMAIN}{u}</loc><lastmod>{MODIFIED}</lastmod><changefreq>{"weekly" if u == "/" else "monthly"}</changefreq><priority>{"1.0" if u=="/" else "0.7"}</priority></url>'
         for u in urls
     )
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}\n</urlset>\n'
@@ -279,7 +301,44 @@ def build_sitemap():
         f.write(xml)
 
 
+def build_llms():
+    lines = [f"# {SITE}", "",
+             "> 뱀꿈·돈꿈·이빨 빠지는 꿈 등 자주 검색되는 꿈을 전통 해몽과 정신분석(프로이트) 관점으로 함께 풀이하는 한국어 꿈해몽 사전. 꿈 일기·달력·기록지 PDF 도구와 프로이트 꿈 이론 노트를 제공한다. 풀이는 교육·오락 목적이며 운세나 의학적 진단이 아니다.", "",
+             "## 꿈해몽 풀이"]
+    for s in SYMBOLS:
+        lines.append(f"- [{s['title']} 해몽]({DOMAIN}/dream/{s['slug']}.html): {s['summary']}")
+    lines += ["", "## 도구와 이론",
+              f"- [꿈 일기]({DOMAIN}/diary.html): 꿈 기록, 달력, 패턴 통계, 꿈 해몽 기록지 PDF",
+              f"- [이론 노트]({DOMAIN}/theory/index.html): 압축·전치·소원성취·낮의 잔재 등 프로이트 꿈 이론 정리",
+              f"- [전체 목록]({DOMAIN}/symbols.html): 카테고리별 꿈해몽 목록", "",
+              "## 사이트 정보",
+              f"- [소개]({DOMAIN}/about.html)", f"- [문의]({DOMAIN}/contact.html)", ""]
+    with open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    full = [f"# {SITE} — 전체 해몽 콘텐츠", "", f"출처: {DOMAIN}/ (최종 업데이트 {MODIFIED})", ""]
+    for s in SYMBOLS:
+        full += [f"## {s['title']} 해몽", f"URL: {DOMAIN}/dream/{s['slug']}.html",
+                 f"분류: {s['category']} / 관련 검색어: {', '.join(s['aliases'])}", "",
+                 f"요약: {s['summary']}", "", "### 전통 해몽 풀이", s["traditional"], "", "### 상황별 의미"]
+        full += [f"- {k}: {v}" for k, v in s["context"].items()]
+        full += ["", "### 심리학적으로 보면", s["psychological"], ""]
+    with open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(full))
+
+
+def build_robots():
+    bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
+            "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended"]
+    txt = "User-agent: *\nAllow: /\n\n"
+    txt += "".join(f"User-agent: {b}\nAllow: /\n\n" for b in bots)
+    txt += f"Sitemap: {DOMAIN}/sitemap.xml\n"
+    with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write(txt)
+
+
 if __name__ == "__main__":
+    build_llms()
+    build_robots()
     build_search_data()
     build_symbol_pages()
     build_index()

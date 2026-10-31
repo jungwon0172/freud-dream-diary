@@ -127,7 +127,7 @@ footer.site nav{ display:flex; gap:16px; flex-wrap:wrap; }
   .threshold path{ animation: none; stroke-dashoffset: 0; }
 }
 
-.hero{ padding: 56px 0 20px; }
+.hero{ padding-top: 56px; padding-bottom: 20px; }
 .hero .eyebrow{
   font-family: var(--font-mono);
   font-size: 12px;
@@ -150,7 +150,7 @@ footer.site nav{ display:flex; gap:16px; flex-wrap:wrap; }
 }
 
 /* ---------- 카드 / 섹션 ---------- */
-.section{ padding: 54px 0; border-top: 1px solid var(--line); }
+.section{ padding-top: 54px; padding-bottom: 54px; border-top: 1px solid var(--line); }
 .section > .wrap, .section > .wrap-wide{ }
 .section-head{ margin-bottom: 28px; }
 .section-head .tag{
@@ -427,3 +427,16 @@ input:focus, textarea:focus, select:focus{
   .dream-menu-scroll{ gap:0; justify-content:space-between; font-size:12px; letter-spacing:0.01em; }
   .dream-menu-scroll a{ padding: 11px 6px; }
 }
+
+/* GEO: 핵심 답변 박스, 질문형 소제목 */
+.answer-box{
+  border: 1px solid var(--brass); border-left-width: 4px;
+  background: var(--paper-card); border-radius: var(--radius);
+  padding: 14px 18px; margin: 4px 0 8px;
+}
+.answer-box .answer-label{
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--brass); text-transform: uppercase; display:block; margin-bottom: 4px;
+}
+.answer-box p{ margin: 0; font-size: 15px; }
+h3.qa-q{ font-family: var(--font-display); font-size: 16px; margin: 0 0 6px; color: var(--wine); }

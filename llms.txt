@@ -1,0 +1,42 @@
+# 프로이트 꿈해몽
+
+> 뱀꿈·돈꿈·이빨 빠지는 꿈 등 자주 검색되는 꿈을 전통 해몽과 정신분석(프로이트) 관점으로 함께 풀이하는 한국어 꿈해몽 사전. 꿈 일기·달력·기록지 PDF 도구와 프로이트 꿈 이론 노트를 제공한다. 풀이는 교육·오락 목적이며 운세나 의학적 진단이 아니다.
+
+## 꿈해몽 풀이
+- [뱀 꿈 해몽](https://freud-dream-diary.vercel.app/dream/snake.html): 뱀 꿈은 전통 해몽에서 재물운과 태몽의 대표적인 상징으로 꼽힙니다.
+- [돈 꿈 해몽](https://freud-dream-diary.vercel.app/dream/money.html): 돈 꿈은 상황에 따라 의미가 정반대로 갈리는 대표적인 해몽 소재입니다.
+- [이빨 빠지는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/teeth.html): 이가 빠지는 꿈은 가장 흔하게 검색되는 꿈 중 하나로, 통제력 상실과 관련된 해석이 많습니다.
+- [물에 빠지는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/water.html): 물 꿈은 맑은 물과 탁한 물, 잔잔함과 거셈에 따라 정반대로 해석되는 상징입니다.
+- [불 꿈 해몽](https://freud-dream-diary.vercel.app/dream/fire.html): 불 꿈은 화재라는 부정적 이미지와 달리, 전통 해몽에서는 길몽으로 보는 경우가 많습니다.
+- [피 꿈 해몽](https://freud-dream-diary.vercel.app/dream/blood.html): 피 꿈은 섬뜩한 이미지와 달리 전통 해몽에서 재물운으로 해석되는 경우가 많습니다.
+- [죽는 꿈 (지인이 죽는 꿈) 해몽](https://freud-dream-diary.vercel.app/dream/death.html): 가까운 사람이 죽는 꿈은 실제 불길한 징조가 아니라 관계의 변화를 뜻하는 경우가 많습니다.
+- [아기 꿈 (태몽 포함) 해몽](https://freud-dream-diary.vercel.app/dream/baby.html): 아기 꿈은 실제 임신 여부와 상관없이 새로운 시작을 상징하는 경우가 많습니다.
+- [돼지 꿈 해몽](https://freud-dream-diary.vercel.app/dream/pig.html): 돼지 꿈은 한국에서 가장 널리 알려진 재물운 길몽입니다.
+- [용 꿈 해몽](https://freud-dream-diary.vercel.app/dream/dragon.html): 용 꿈은 전통 해몽에서 최고의 길몽 중 하나로, 큰 성취와 명예를 상징합니다.
+- [하늘을 나는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/flying.html): 하늘을 나는 꿈은 자유로움과 자신감을 상징하는 대표적인 길몽입니다.
+- [떨어지는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/falling.html): 떨어지는 꿈은 가장 흔한 꿈 중 하나로, 통제력 상실에 대한 불안을 반영합니다.
+- [쫓기는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/chasing.html): 쫓기는 꿈은 현실에서 회피하고 있는 문제나 감정을 상징하는 경우가 많습니다.
+- [시험 보는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/exam.html): 시험 꿈은 실제 시험 경험이 없어도 평가받는 상황에 대한 불안을 반영합니다.
+- [결혼식 꿈 해몽](https://freud-dream-diary.vercel.app/dream/wedding.html): 결혼식 꿈은 실제 결혼 여부와 상관없이 새로운 결합과 시작을 상징합니다.
+- [전 애인이 나오는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/ex.html): 전 애인이 나오는 꿈은 실제 재회 신호가 아니라 마무리 짓지 못한 감정의 표현인 경우가 많습니다.
+- [머리카락 꿈 (빠지는 꿈, 자르는 꿈) 해몽](https://freud-dream-diary.vercel.app/dream/hair.html): 머리카락 꿈은 자기 이미지와 사회적 평판에 대한 심리를 반영하는 경우가 많습니다.
+- [똥 꿈 해몽](https://freud-dream-diary.vercel.app/dream/poop.html): 똥 꿈은 더러운 이미지와 달리 전통 해몽에서 대표적인 재물운 길몽으로 꼽힙니다.
+- [물고기 잡는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/fish.html): 물고기를 잡는 꿈은 노력의 결실과 재물운을 상징하는 길몽으로 해석됩니다.
+- [이사하는 꿈 / 집 꿈 해몽](https://freud-dream-diary.vercel.app/dream/house.html): 집 꿈은 자기 자신이나 삶의 기반, 심리적 안정감을 상징하는 경우가 많습니다.
+- [교통사고 꿈 해몽](https://freud-dream-diary.vercel.app/dream/car_accident.html): 교통사고 꿈은 실제 사고 예지몽이 아니라 삶의 방향에 대한 불안을 반영하는 경우가 많습니다.
+- [귀신 꿈 해몽](https://freud-dream-diary.vercel.app/dream/ghost.html): 귀신 꿈은 두려움과 달리 마무리 짓지 못한 감정이나 과거와 관련된 경우가 많습니다.
+- [학교 다시 다니는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/school.html): 학교 꿈은 졸업한 지 오래되어도 자주 나타나는 대표적인 스트레스 관련 꿈입니다.
+- [꽃 꿈 해몽](https://freud-dream-diary.vercel.app/dream/flower.html): 꽃 꿈은 대체로 좋은 소식이나 기쁜 일과 관련된 길몽으로 해석됩니다.
+- [우는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/cry.html): 꿈에서 우는 것은 현실과 반대로 해소와 후련함을 상징하는 경우가 많습니다.
+- [길을 잃는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/lost.html): 길을 잃는 꿈은 현재 방향성에 대한 혼란이나 불안을 반영하는 경우가 많습니다.
+- [거미 꿈 해몽](https://freud-dream-diary.vercel.app/dream/spider.html): 거미 꿈은 징그러운 이미지와 달리 전통 해몽에서 재물운으로 해석되기도 합니다.
+- [신발 잃어버리는 꿈 해몽](https://freud-dream-diary.vercel.app/dream/shoes.html): 신발 꿈은 자신의 입지나 사회적 역할에 대한 불안을 반영하는 경우가 많습니다.
+
+## 도구와 이론
+- [꿈 일기](https://freud-dream-diary.vercel.app/diary.html): 꿈 기록, 달력, 패턴 통계, 꿈 해몽 기록지 PDF
+- [이론 노트](https://freud-dream-diary.vercel.app/theory/index.html): 압축·전치·소원성취·낮의 잔재 등 프로이트 꿈 이론 정리
+- [전체 목록](https://freud-dream-diary.vercel.app/symbols.html): 카테고리별 꿈해몽 목록
+
+## 사이트 정보
+- [소개](https://freud-dream-diary.vercel.app/about.html)
+- [문의](https://freud-dream-diary.vercel.app/contact.html)
