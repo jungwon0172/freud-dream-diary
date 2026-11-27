@@ -3,7 +3,6 @@
    컨셉: 정신분석가의 가죽 서재 / 잉크와 브라스
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root{
   --ink: #23211d;
@@ -440,3 +439,9 @@ input:focus, textarea:focus, select:focus{
 }
 .answer-box p{ margin: 0; font-size: 15px; }
 h3.qa-q{ font-family: var(--font-display); font-size: 16px; margin: 0 0 6px; color: var(--wine); }
+
+/* 브레드크럼 */
+nav.breadcrumb{ font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); margin-bottom: 18px; }
+nav.breadcrumb a{ color: var(--ink-soft); border-bottom: 1px solid transparent; }
+nav.breadcrumb a:hover{ color: var(--wine); border-color: var(--wine); }
+nav.breadcrumb span{ margin: 0 4px; opacity: .6; }
